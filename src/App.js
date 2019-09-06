@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import WelcomeScreen from './welcome.js';
 import MainMenu from './main-menu.js';
 import './App.css';
+import AdditionModule from './addition/addition-module.js';
 
 class App extends Component {
     constructor(props) {
@@ -23,17 +24,12 @@ class App extends Component {
 
     render() {
         const { name, menu } = this.state;
+        const routes = ['background', 'example', 'practice', 'end'];
         return (
             <HashRouter basename='/'>
-                <div>
-                    <ul>
-                        <li><Link to="/">Welcome</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                    </ul>
-                    <hr />
-                    <Route exact path="/" component={WelcomeScreen} />
-                    <Route exact path="/about" component={About} />
-                </div>
+                <Route exact path="/" component={WelcomeScreen} />
+                <Route exact path="/menu" component={MainMenu} />
+                <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} />} />
             </HashRouter>
 
         );
