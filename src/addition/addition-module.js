@@ -31,8 +31,8 @@ class AdditionModule extends Component {
             default: routing = (<AdditionBackground click={this.nextPage}/>); break;
         }
         return (
-            <div className="module">
-                <Header title="Addition Module" className="addition-header">
+            <div>
+                <Header title="+ Addition Module" className="addition-header">
                     {route !== 'end' ?
                         <Link to="/menu">
                             <Button>
@@ -43,7 +43,9 @@ class AdditionModule extends Component {
                         <span style={{ width: '10px' }} />
                     }
                 </Header>
-                {routing}
+                <div className="body-component">
+                    {routing}
+                </div>
             </div>
         );
     }

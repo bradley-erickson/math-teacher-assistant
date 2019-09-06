@@ -8,7 +8,9 @@ const Header = (props) => {
             <span className="header-title">
                 {title}
             </span>
-            {children}
+            <span className="header-button">
+                {children}
+            </span>
         </div>
     );
 };

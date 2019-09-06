@@ -19,12 +19,12 @@ class EndModule extends Component {
         return (    
             <div>
                 <div>
-                    <b>Congratulations, {this.props.name}!</b>
+                    <b className="body-header">Congratulations, {this.props.name}!</b>
                     <br />
                     You completed the {_.upperFirst(moduleType)} module!
                 </div>
                 <div>
-                <Link to="/">
+                <Link to="/menu">
                     <Button>
                         Home
                     </Button>

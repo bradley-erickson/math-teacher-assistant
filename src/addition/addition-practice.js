@@ -17,12 +17,12 @@ class AdditionPractice extends Component {
         return (    
             <div>
                 <div>
-                    <b>Practice:</b>
+                    <b className="body-header">Practice:</b>
                     <br />
                     This is some crazy shit dawg.
                 </div>
                 <div>
-                <Link to="/addition/practice">
+                <Link to="/addition/end">
                     <Button onClick={this.nextPage}>
                         Next
                     </Button>

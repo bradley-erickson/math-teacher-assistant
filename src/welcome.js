@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Header from './shared/header.js'
 
 class WelcomeScreen extends Component {
     constructor(props) {
@@ -19,18 +20,20 @@ class WelcomeScreen extends Component {
 
     render() {
         return (
-            <div className="menu">
-                <div>
-                    Welcome to the Math Teacher Assistant!
-                </div>
-                <div>
-                    Please input your name and click 'Start' to begin.
+            <div>
+                <Header title="Welcome" className="welcome-main-header">
+                    <span style={{ width: '10px' }} />
+                </Header>
+                <div className="body-component">
+                    This is the Math Teacher Assistant!
+                    <br />
+                    Please input your name and click 'Begin'
                     <br />
                     <Input placeholder="Name" ref={this.inputRef} onChange={e => this.setState({ studentName: e.target.value })}/>
                     <br />
                     <Link to="/menu">
                         <Button onClick={this.onStart}>
-                            Start
+                            Begin
                         </Button>
                     </Link>
                 </div>

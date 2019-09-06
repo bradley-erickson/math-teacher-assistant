@@ -24,12 +24,13 @@ class App extends Component {
         const { name } = this.state;
         const routes = ['background', 'example', 'practice', 'end'];
         return (
-            <HashRouter basename='/'>
-                <Route exact path="/" component={() => <WelcomeScreen onStart={this.onStart} />} />
-                <Route exact path="/menu" component={() => <MainMenu name={name} />} />
-                <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} name={name} />} />
-            </HashRouter>
-
+            <div className="default">
+                <HashRouter basename='/'>
+                    <Route exact path="/" component={() => <WelcomeScreen onStart={this.onStart} />} />
+                    <Route exact path="/menu" component={() => <MainMenu name={name} />} />
+                    <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} name={name} />} />
+                </HashRouter>
+            </div>
         );
     }
 }

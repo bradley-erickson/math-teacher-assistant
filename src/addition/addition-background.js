@@ -17,9 +17,16 @@ class AdditionBackground extends Component {
         return (    
             <div>
                 <div>
-                    <b>Background:</b>
+                    <b className="body-header">Background:</b>
                     <br />
-                    This is some crazy shit dawg.
+                    Addition is a combination of multiple groups, or the total amongst all groups involved. This total is called the sum. The general form for an equation is:
+                    <br />
+                    <br />
+                    <i>a + b = sum</i>
+                    <br />
+                    <br />
+                    Where <i>a</i> and <i>b</i> are numbers and <i>c</i> is the sum.
+                    Click 'Next' to look at some examples
                 </div>
                 <div>
                 <Link to="/addition/example">

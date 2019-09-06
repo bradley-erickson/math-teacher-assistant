@@ -2,16 +2,23 @@ import React from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Header from './shared/header.js';
 
 const MainMenu = (props) => {
     return (
-        <div className="menu">
-            <div>
+        <div>
+            <Header title="Main Menu" className="welcome-main-header">
+                <Link to="/">
+                    <Button>
+                        Reset
+                    </Button>
+                </Link>
+            </Header>
+            <div className="body-component">
                 Hello, {props.name}!
                 <br />
                 What do you need help with?
-            </div>
-            <div>
+                <br />
                 <Link to="/addition/background">
                     <Button>
                         + Addition
