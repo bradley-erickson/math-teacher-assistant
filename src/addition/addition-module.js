@@ -6,6 +6,7 @@ import Header from '../shared/header.js';
 import AdditionBackground from './addition-background.js';
 import AdditionExample from './addition-example.js';
 import AdditionPractice from './addition-practice.js';
+import EndModule from '../shared/end-module.js';
 
 class AdditionModule extends Component {
     constructor(props) {
@@ -26,18 +27,20 @@ class AdditionModule extends Component {
         switch (route) {
             case('example'): routing = (<AdditionExample click={this.nextPage} />); break;
             case('practice'): routing = (<AdditionPractice click={this.nextPage} />); break;
-            case('end'): routing = (<div>Woah</div>); break;
+            case('end'): routing = (<EndModule name={this.props.name} moduleType="Addition" click={this.nextPage} />); break;
             default: routing = (<AdditionBackground click={this.nextPage}/>); break;
         }
         return (
             <div className="module">
                 <Header title="Addition Module" className="addition-header">
-                    {route !== 'end' &&
+                    {route !== 'end' ?
                         <Link to="/menu">
                             <Button>
                                 Home
                             </Button>
                         </Link>
+                        :
+                        <span style={{ width: '10px' }} />
                     }
                 </Header>
                 {routing}
@@ -47,8 +50,7 @@ class AdditionModule extends Component {
 }
 
 AdditionModule.propTypes = {
-    // name: PropTypes.string.isRequired,
-    // toggleHome: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
     data: PropTypes.array.isRequired
 }
 

@@ -10,12 +10,14 @@ class App extends Component {
         super(props);
         this.onStart = this.onStart.bind(this);
         this.state = {
-            name: ''
+            name: 'user'
         }
     }
 
     onStart(name) {
-        this.setState({ name });
+        if (name) {
+            this.setState({ name });
+        }
     }
 
     render() {
@@ -24,8 +26,8 @@ class App extends Component {
         return (
             <HashRouter basename='/'>
                 <Route exact path="/" component={() => <WelcomeScreen onStart={this.onStart} />} />
-                <Route exact path="/menu" component={MainMenu} />
-                <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} />} />
+                <Route exact path="/menu" component={() => <MainMenu name={name} />} />
+                <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} name={name} />} />
             </HashRouter>
 
         );

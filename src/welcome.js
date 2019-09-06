@@ -29,7 +29,7 @@ class WelcomeScreen extends Component {
                     <Input placeholder="Name" ref={this.inputRef} onChange={e => this.setState({ studentName: e.target.value })}/>
                     <br />
                     <Link to="/menu">
-                        <Button>
+                        <Button onClick={this.onStart}>
                             Start
                         </Button>
                     </Link>
