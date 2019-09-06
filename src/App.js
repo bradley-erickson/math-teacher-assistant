@@ -10,24 +10,20 @@ class App extends Component {
         super(props);
         this.onStart = this.onStart.bind(this);
         this.state = {
-            name: '',
-            menu: false
+            name: ''
         }
     }
 
     onStart(name) {
-        this.setState({
-            name,
-            menu: !this.state.menu
-        });
+        this.setState({ name });
     }
 
     render() {
-        const { name, menu } = this.state;
+        const { name } = this.state;
         const routes = ['background', 'example', 'practice', 'end'];
         return (
             <HashRouter basename='/'>
-                <Route exact path="/" component={WelcomeScreen} />
+                <Route exact path="/" component={() => <WelcomeScreen onStart={this.onStart} />} />
                 <Route exact path="/menu" component={MainMenu} />
                 <Route exact path="/addition/:type" component={() => <AdditionModule data={routes} />} />
             </HashRouter>
@@ -35,6 +31,5 @@ class App extends Component {
         );
     }
 }
-const About = () => <div><h2>About</h2></div>
 
 export default App;

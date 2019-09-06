@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Input, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import MainMenu from './main-menu.js';
 
 class WelcomeScreen extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class WelcomeScreen extends Component {
     }
 
     onStart() {
-        this.setState({ redirect: !this.state.redirect });
+        this.props.onStart(this.state.studentName);
     }
 
     render() {
@@ -40,9 +39,8 @@ class WelcomeScreen extends Component {
     }
 }
 
-// WelcomeScreen.propTypes = {
-//     name: PropTypes.string.isRequired,
-//     onStart: PropTypes.func.isRequired
-// }
+WelcomeScreen.propTypes = {
+    onStart: PropTypes.func.isRequired
+}
 
 export default WelcomeScreen;
