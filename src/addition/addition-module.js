@@ -27,7 +27,7 @@ class AdditionModule extends Component {
         switch (route) {
             case('example'): routing = (<AdditionExample click={this.nextPage} />); break;
             case('practice'): routing = (<AdditionPractice click={this.nextPage} />); break;
-            case('end'): routing = (<EndModule name={this.props.name} moduleType="Addition" click={this.nextPage} />); break;
+            case('end'): routing = (<EndModule name={this.props.name} moduleType="addition" click={this.nextPage} />); break;
             default: routing = (<AdditionBackground click={this.nextPage}/>); break;
         }
         return (
