@@ -19,11 +19,14 @@ const MainMenu = (props) => {
                 <br />
                 What do you need help with?
                 <br />
-                <Link to="/addition/background">
-                    <Button>
-                        + Addition
-                    </Button>
-                </Link>
+                <div className="top-margin">
+                    <Link to="/addition/background">
+                        <Button>
+                            <i className="right-margin fa fa-plus" />
+                            Addition
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

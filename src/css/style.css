@@ -48,3 +48,56 @@
     background-color: #ce0e2d;
 }
 
+.color-wrong-red {
+    color: red;
+}
+
+.color-correct-green {
+    color: green;
+}
+
+.btn {
+    font-size: 24px;
+    background-color: #EBE6E0;
+    color: #000080;
+    border: 2px solid #000080;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #bcb8b3;
+}
+
+.btn.disabled {
+    color: #7f7fbf;
+    border-color: #7f7fbf;
+}
+
+.form-control {
+    font-size: 24px;
+    background-color: #EBE6E0;
+    color: #000080;
+    border: 2px solid #000080;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.practice-input {
+    width: 50px;
+}
+
+.top-margin {
+    margin-top: 5px;
+}
+
+.left-margin {
+    margin-left: 5px;
+}
+
+.right-margin {
+    margin-right: 5px;
+}
+
+.bottom-margin {
+    margin-bottom: 5px;
+}

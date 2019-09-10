@@ -28,12 +28,12 @@ class AdditionBackground extends Component {
                     Where <i>a</i> and <i>b</i> are numbers and <i>c</i> is the sum.
                     Click 'Next' to look at some examples
                 </div>
-                <div>
-                <Link to="/addition/example">
-                    <Button onClick={this.nextPage}>
-                        Next
-                    </Button>
-                </Link>
+                <div className="top-margin">
+                    <Link to="/addition/example">
+                        <Button onClick={this.nextPage}>
+                            Next
+                        </Button>
+                    </Link>
                 </div>
             </div>
         );

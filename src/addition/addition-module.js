@@ -8,26 +8,39 @@ import AdditionExample from './addition-example.js';
 import AdditionPractice from './addition-practice.js';
 import EndModule from '../shared/end-module.js';
 
+
+
 class AdditionModule extends Component {
     constructor(props) {
         super(props);
         this.nextPage = this.nextPage.bind(this);
+        this.increaseDifficulty = this.increaseDifficulty.bind(this);
         this.state = {
-            route: 'background'
+            route: 'background',
+            difficulty: 11,
+            submission: 0,
         };
     }
 
-    nextPage(text) {
-        this.setState({ route: text });   
+    nextPage(text, submission) {
+        this.setState({ route: text });
+        if (submission) {
+            this.setState({ submission });
+        }
+    }
+
+    increaseDifficulty() {
+        const difficulty = (this.state.difficulty - 1) * 10 + 1;
+        this.setState({ difficulty })
     }
 
     render() {
-        const { route } = this.state;
+        const { route, difficulty, submission } = this.state;
         let routing;
         switch (route) {
             case('example'): routing = (<AdditionExample click={this.nextPage} />); break;
-            case('practice'): routing = (<AdditionPractice click={this.nextPage} />); break;
-            case('end'): routing = (<EndModule name={this.props.name} moduleType="addition" click={this.nextPage} />); break;
+            case('practice'): routing = (<AdditionPractice click={this.nextPage} difficulty={difficulty} />); break;
+            case('end'): routing = (<EndModule name={this.props.name} moduleType="addition" submission={submission} click={this.nextPage} increaseDifficulty={this.increaseDifficulty} />); break;
             default: routing = (<AdditionBackground click={this.nextPage}/>); break;
         }
         return (

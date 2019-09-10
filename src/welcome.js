@@ -29,7 +29,7 @@ class WelcomeScreen extends Component {
                     <br />
                     Please input your name and click 'Begin'
                     <br />
-                    <Input placeholder="Name" ref={this.inputRef} onChange={e => this.setState({ studentName: e.target.value })}/>
+                    <Input className="top-margin bottom-margin" placeholder="Name" ref={this.inputRef} onChange={e => this.setState({ studentName: e.target.value })}/>
                     <br />
                     <Link to="/menu">
                         <Button onClick={this.onStart}>

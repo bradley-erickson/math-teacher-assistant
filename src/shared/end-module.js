@@ -11,30 +11,29 @@ class EndModule extends Component {
     }
 
     retry() {
+        this.props.increaseDifficulty();
         this.props.click('practice');
     }
     
     render() {
-        const { moduleType } = this.props;
+        const { moduleType, submission } = this.props;
         return (    
             <div>
                 <div>
                     <b className="body-header">Congratulations, {this.props.name}!</b>
                     <br />
-                    You completed the {_.upperFirst(moduleType)} module!
+                    You completed the {_.upperFirst(moduleType)} module in {submission} submissions!
                 </div>
-                <div>
                 <Link to="/menu">
-                    <Button>
+                    <Button className="right-margin top-margin">
                         Home
                     </Button>
                 </Link>
                 <Link to={`/${moduleType}/practice`}>
                     <Button onClick={this.retry}>
-                        Retry
+                        Up difficulty
                     </Button>
                 </Link>
-                </div>
             </div>
         );
     }
@@ -43,7 +42,9 @@ class EndModule extends Component {
 EndModule.propTypes = {
     moduleType: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    click: PropTypes.func.isRequired
+    click: PropTypes.func.isRequired,
+    increaseDifficulty: PropTypes.func.isRequired,
+    submission: PropTypes.number.isRequired
 }
 
 export default EndModule;

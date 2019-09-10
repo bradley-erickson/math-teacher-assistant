@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 import { names } from '../constants/names.js';
 import { items } from '../constants/items.js';
 
-function getTalliesText(num) {
-    let text = `${num} `;
+function getTalliesText(num, ran1) {
+    let text = `${num}  =  `;
     for (let i = 0; i < num; i++) {
+        if (i === ran1) {
+            text = text + '  +  ';
+        }
         text = text + '|';
     }
     return text;
@@ -20,10 +23,10 @@ class AdditionExample extends Component {
         this.showBasicExample = this.showBasicExample.bind(this);
         this.showComplexExample = this.showComplexExample.bind(this);
         this.state = {
-            rand1: Math.floor(Math.random() * 5),
-            rand2: Math.floor(Math.random() * 5),
-            rand3: Math.floor(Math.random() * 5),
-            rand4: Math.floor(Math.random() * 5),
+            rand1: Math.floor(Math.random() * 6),
+            rand2: Math.floor(Math.random() * 6),
+            rand3: Math.floor(Math.random() * 6),
+            rand4: Math.floor(Math.random() * 6),
             name: names[Math.floor(Math.random() * names.length)],
             item: items[Math.floor(Math.random() * items.length)]
         };
@@ -38,7 +41,7 @@ class AdditionExample extends Component {
         const total = rand1 + rand2;
         let i = 0;
         const run = setInterval(function() {
-            document.getElementById('basicExample').innerHTML = getTalliesText(i++);
+            document.getElementById('basicExample').innerHTML = getTalliesText(i++, rand1);
             if (i === total + 1) clearInterval(run);
         }, 1000); 
     }
@@ -48,7 +51,7 @@ class AdditionExample extends Component {
         const total = rand3 + rand4;
         let i = 0;
         const run = setInterval(function() {
-            document.getElementById('complexExample').innerHTML = getTalliesText(i++);
+            document.getElementById('complexExample').innerHTML = getTalliesText(i++, rand3);
             if (i === total + 1) clearInterval(run);
         }, 1000); 
     }
@@ -63,7 +66,7 @@ class AdditionExample extends Component {
                     <b className="body-header">Example:</b>
                     <br />
                     Click the button to show the steps for this basic example: 
-                    <Button onClick={this.showBasicExample}>
+                    <Button onClick={this.showBasicExample} className="top-margin bottom-margin">
                         Show steps
                     </Button>
                     <br />
@@ -71,7 +74,7 @@ class AdditionExample extends Component {
                     <div id="basicExample"></div>
                     <br />
                     Click the button to show the steps for this complex example: 
-                    <Button onClick={this.showComplexExample}>
+                    <Button onClick={this.showComplexExample} className="top-margin bottom-margin">
                         Show steps
                     </Button>
                     <br />
