@@ -7,7 +7,7 @@ import Header from './shared/header.js';
 const MainMenu = (props) => {
     return (
         <div>
-            <Header title="Main Menu" className="welcome-main-header">
+            <Header title="Main Menu" icon="fa-home" className="welcome-main-header">
                 <Link to="/">
                     <Button>
                         Reset

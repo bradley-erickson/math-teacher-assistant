@@ -26,7 +26,8 @@ class EndModule extends Component {
                 </div>
                 <Link to="/menu">
                     <Button className="right-margin top-margin">
-                        Home
+                        <i className="fa fa-home right-margin" />
+                        Menu
                     </Button>
                 </Link>
                 <Link to={`/${moduleType}/practice`}>

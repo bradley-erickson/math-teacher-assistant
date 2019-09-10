@@ -45,11 +45,11 @@ class AdditionModule extends Component {
         }
         return (
             <div>
-                <Header title="+ Addition Module" className="addition-header">
+                <Header title="Addition Module" icon="fa-plus" className="addition-header">
                     {route !== 'end' ?
                         <Link to="/menu">
                             <Button>
-                                Home
+                                <i className="fa fa-home" />
                             </Button>
                         </Link>
                         :
