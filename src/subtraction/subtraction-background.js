@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-class AdditionBackground extends Component {
+class SubtractionBackground extends Component {
     constructor(props) {
         super(props);
         this.nextPage = this.nextPage.bind(this);
@@ -22,14 +22,14 @@ class AdditionBackground extends Component {
                     Addition is a combination of multiple groups, or the total amongst all groups involved. This total is called the sum. The general form for an equation is:
                     <br />
                     <br />
-                    <i>a + b = c</i>
+                    <i>a - b = c</i>
                     <br />
                     <br />
                     Where <i>a</i> and <i>b</i> are numbers and <i>c</i> is the sum.
                     Click 'Next' to look at some examples
                 </div>
                 <div className="top-margin">
-                    <Link to="/addition/example">
+                    <Link to="/subtraction/example">
                         <Button onClick={this.nextPage}>
                             Next
                         </Button>
@@ -40,8 +40,8 @@ class AdditionBackground extends Component {
     }
 };
 
-AdditionBackground.propTypes = {
+SubtractionBackground.propTypes = {
     click: PropTypes.func.isRequired
 }
 
-export default AdditionBackground;
+export default SubtractionBackground;

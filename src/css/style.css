@@ -1,6 +1,6 @@
 .default {
     background-color: #EBE6E0;
-    color: #000080;
+    color: #0e2dce;
     height: 100vh;
     font-size: 36px;
     width: 70vh;
@@ -17,6 +17,7 @@
     display: flex;
     padding: 0px 10px 0px 10px;
     justify-content: space-between;
+    border-bottom: 2px solid #0e2dce;
 }
 
 .header-title {
@@ -41,11 +42,15 @@
 }
 
 .welcome-main-header {
-    background-color: #000080;
+    background-color: #0e2dce;
 }
 
 .addition-header {
     background-color: #ce0e2d;
+}
+
+.subtraction-header {
+    background-color: #2dce0e;
 }
 
 .color-wrong-red {
@@ -59,8 +64,8 @@
 .btn {
     font-size: 24px;
     background-color: #EBE6E0;
-    color: #000080;
-    border: 2px solid #000080;
+    color: #0e2dce;
+    border: 2px solid #0e2dce;
     border-radius: 5px;
 }
 
@@ -76,8 +81,8 @@
 .form-control {
     font-size: 24px;
     background-color: #EBE6E0;
-    color: #000080;
-    border: 2px solid #000080;
+    color: #0e2dce;
+    border: 2px solid #0e2dce;
     border-radius: 5px;
     padding-left: 5px;
 }

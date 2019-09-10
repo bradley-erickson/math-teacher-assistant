@@ -16,16 +16,16 @@ function getTalliesText(num, ran1) {
     return text;
 }
 
-class AdditionExample extends Component {
+class SubtractionExample extends Component {
     constructor(props) {
         super(props);
         this.nextPage = this.nextPage.bind(this);
         this.showBasicExample = this.showBasicExample.bind(this);
         this.showComplexExample = this.showComplexExample.bind(this);
         this.state = {
-            rand1: Math.floor(Math.random() * 6),
+            rand1: Math.floor(Math.random() * 6) + 5,
             rand2: Math.floor(Math.random() * 6),
-            rand3: Math.floor(Math.random() * 6),
+            rand3: Math.floor(Math.random() * 6) + 5,
             rand4: Math.floor(Math.random() * 6),
             name: names[Math.floor(Math.random() * names.length)],
             item: items[Math.floor(Math.random() * items.length)]
@@ -70,7 +70,7 @@ class AdditionExample extends Component {
                         Show steps
                     </Button>
                     <br />
-                    {rand1} + {rand2} = {rand1 + rand2}
+                    {rand1} - {rand2} = {rand1 - rand2}
                     <div id="basicExample"></div>
                     <br />
                     Click the button to show the steps for this complex example: 
@@ -78,14 +78,14 @@ class AdditionExample extends Component {
                         Show steps
                     </Button>
                     <br />
-                    {name} has {rand3} {item}. They obtain {rand4} more. How many {item} does {name} have now?
+                    {name} has {rand3} {item}. They lose {rand4}. How many {item} does {name} have now?
                     <br />
-                    <i>They now have {rand3 + rand4} total.</i> 
+                    <i>They now have {rand3 - rand4} total.</i> 
                     <div id="complexExample"></div>
                     <br />
                 </div>
                 <div>
-                <Link to="/addition/practice">
+                <Link to="/subtraction/practice">
                     <Button onClick={this.nextPage}>
                         Next
                     </Button>
@@ -96,8 +96,8 @@ class AdditionExample extends Component {
     }
 };
 
-AdditionExample.propTypes = {
+SubtractionExample.propTypes = {
     click: PropTypes.func.isRequired
 }
 
-export default AdditionExample;
+export default SubtractionExample;

@@ -21,9 +21,15 @@ const MainMenu = (props) => {
                 <br />
                 <div className="top-margin">
                     <Link to="/addition/background">
-                        <Button>
+                        <Button className="right-margin">
                             <i className="right-margin fa fa-plus" />
                             Addition
+                        </Button>
+                    </Link>
+                    <Link to="/subtraction/background">
+                        <Button>
+                            <i className="right-margin fa fa-minus" />
+                            Subtraction
                         </Button>
                     </Link>
                 </div>

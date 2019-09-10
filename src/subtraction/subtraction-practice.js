@@ -13,7 +13,7 @@ function createQuestions(num, difficulty) {
     return questions;
 }
 
-class AdditionPractice extends Component {
+class SubtractionPractice extends Component {
     constructor(props) {
         super(props);
         this.nextPage = this.nextPage.bind(this);
@@ -35,11 +35,11 @@ class AdditionPractice extends Component {
 
     checkQuestion(question) {
         const { questions } = this.state;
-        const sum = parseInt(questions[question][2], 10);
-        if (sum) {
+        const num3 = parseInt(questions[question][2], 10);
+        if (num3) {
             const num1 = questions[question][0];
             const num2 = questions[question][1];
-            return (num1 + num2 === sum);
+            return (num1 - num2 === num3);
         }
         else {
             return false;
@@ -65,9 +65,9 @@ class AdditionPractice extends Component {
         const submitted = submissions > 0;
         let text;
         if (basic) {
-            text = `${questions[num][0]} + ${questions[num][1]} = `;
+            text = `${questions[num][0]} - ${questions[num][1]} = `;
         } else {
-            text = `${name} has ${questions[4][0]} ${item}. They obtain ${questions[4][1]} more. How many ${item} does ${name} have now? `
+            text = `${name} has ${questions[4][0]} ${item}. They lose ${questions[4][1]}. How many ${item} does ${name} have now? `
         }
         return (
             <div className="top-margin">
@@ -97,7 +97,7 @@ class AdditionPractice extends Component {
                 <Button onClick={this.checkAnswer} className="right-margin top-margin">
                     Submit
                 </Button>
-                <Link to="/addition/end">
+                <Link to="/subtraction/end">
                     <Button disabled={!correct.every(v => v === true)} onClick={this.nextPage}>
                         Next
                     </Button>
@@ -112,9 +112,9 @@ class AdditionPractice extends Component {
     }
 };
 
-AdditionPractice.propTypes = {
+SubtractionPractice.propTypes = {
     click: PropTypes.func.isRequired,
     difficulty: PropTypes.number.isRequired
 }
 
-export default AdditionPractice;
+export default SubtractionPractice;
