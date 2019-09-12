@@ -9,7 +9,7 @@ function createQuestions(num, difficulty) {
     let questions = [];
     
     for (let i = 0; i < num; i++) {
-        const ran1 = Math.floor(Math.random() * difficulty);
+        const ran1 = Math.floor(Math.random() * difficulty) + 1;
         const ran2 = Math.floor(Math.random() * difficulty);
         questions[i] = [Math.max(ran1, ran2), Math.min(ran1, ran2)];
     }
