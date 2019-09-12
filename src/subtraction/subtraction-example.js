@@ -14,7 +14,7 @@ function getTalliesText(num, ran1) {
     for (let i = 0; i < (ran1 -num); i++){
         tallytext = tallytext + '|';
     }
-    return text + "<br />Take away: " + tallytext;
+    return text + `<br />Take away ${ran1-num}: ` + tallytext;
 }
 
 class SubtractionExample extends Component {
