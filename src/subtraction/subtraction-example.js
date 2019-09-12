@@ -7,10 +7,7 @@ import { items } from '../constants/items.js';
 
 function getTalliesText(num, ran1) {
     let text = `${num}  =  `;
-    for (let i = 0; i < num; i++) {
-        if (i === ran1) {
-            text = text + '  +  ';
-        }
+    for (let i = 0; i < num; i++){
         text = text + '|';
     }
     return text;
@@ -38,21 +35,21 @@ class SubtractionExample extends Component {
 
     showBasicExample() {
         const { rand1, rand2 } = this.state;
-        const total = rand1 + rand2;
-        let i = 0;
+        const total = rand1 - rand2;
+        let i = rand1;
         const run = setInterval(function() {
-            document.getElementById('basicExample').innerHTML = getTalliesText(i++, rand1);
-            if (i === total + 1) clearInterval(run);
+            document.getElementById('basicExample').innerHTML = getTalliesText(i--, rand1);
+            if (i === total - 1) clearInterval(run);
         }, 1000); 
     }
 
     showComplexExample() {
         const { rand3, rand4 } = this.state;
-        const total = rand3 + rand4;
-        let i = 0;
+        const total = rand3 - rand4;
+        let i = rand3;
         const run = setInterval(function() {
-            document.getElementById('complexExample').innerHTML = getTalliesText(i++, rand3);
-            if (i === total + 1) clearInterval(run);
+            document.getElementById('complexExample').innerHTML = getTalliesText(i--, rand3);
+            if (i === total - 1) clearInterval(run);
         }, 1000); 
     }
 

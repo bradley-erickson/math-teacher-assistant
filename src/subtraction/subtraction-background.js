@@ -19,13 +19,13 @@ class SubtractionBackground extends Component {
                 <div>
                     <b className="body-header">Background:</b>
                     <br />
-                    Addition is a combination of multiple groups, or the total amongst all groups involved. This total is called the sum. The general form for an equation is:
+                    Subtracion is the take away of an amout from a group. This is call the difference:
                     <br />
                     <br />
                     <i>a - b = c</i>
                     <br />
                     <br />
-                    Where <i>a</i> and <i>b</i> are numbers and <i>c</i> is the sum.
+                    Where <i>a</i> and <i>b</i> are numbers and <i>c</i> is the difference.
                     Click 'Next' to look at some examples
                 </div>
                 <div className="top-margin">
