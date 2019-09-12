@@ -19,7 +19,7 @@ class SubtractionBackground extends Component {
                 <div>
                     <b className="body-header">Background:</b>
                     <br />
-                    Subtracion is the take away of an amout from a group. This is call the difference:
+                    Subtraction is the take away of an amout from a group. This is call the difference:
                     <br />
                     <br />
                     <i>a - b = c</i>

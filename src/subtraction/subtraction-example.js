@@ -7,10 +7,14 @@ import { items } from '../constants/items.js';
 
 function getTalliesText(num, ran1) {
     let text = `${num}  =  `;
+    let tallytext = ' ';
     for (let i = 0; i < num; i++){
         text = text + '|';
     }
-    return text;
+    for (let i = 0; i < (ran1 -num); i++){
+        tallytext = tallytext + '|';
+    }
+    return text + "<br />Take away: " + tallytext;
 }
 
 class SubtractionExample extends Component {
